@@ -31,3 +31,9 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+# vim swap file
+*.swp
+
+# OSX tmp file
+.DS_Store
