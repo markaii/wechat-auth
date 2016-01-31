@@ -2,9 +2,9 @@
   "name": "wechat-auth",
   "version": "1.0.0",
   "description": "微信公众号第三方平台授权sdk",
-  "main": "index.js",
+  "main": "lib/auth.js",
   "scripts": {
-    "test": "test"
+    "test": "make test-all"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "authorize"
   ],
   "dependencies": {
-    "wechat-crypto": "0.02"
+    "urllib": "2.7.0"
   },
   "devDependencies": {
   
