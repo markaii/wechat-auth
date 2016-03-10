@@ -4,7 +4,7 @@
   "description": "微信公众号第三方平台授权sdk",
   "main": "lib/auth.js",
   "scripts": {
-    "test": "make test-all"
+    "test": "node test/test.js"
   },
   "repository": {
     "type": "git",
