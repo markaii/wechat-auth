@@ -5,6 +5,8 @@ var Auth = require('../lib/auth');
 var appid = "xxx";
 var appsecret = "xxx";
 
+var mpappid = "xjkfda";
+
 
 var getVerifyTicket = function(callback) {
   callback(null, "ticket@@@c4-LQoYhsWq");
@@ -19,6 +21,10 @@ var saveComponentToken = function(callback) {
 };
 
 var wxauth = new Auth(appid, appsecret, getVerifyTicket, getComponentToken, saveComponentToken);
+
+var redirect_uri = "http://baidu.com";
+var oauthUrl = wxauth.getOAuthURL(mpappid, redirect_uri, '', 'snsapi_base');
+console.log(oauthUrl);
 
 wxauth.getPreAuthCode(function(err, data) {
   if(err) {
