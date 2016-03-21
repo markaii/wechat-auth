@@ -1,5 +1,6 @@
 # wechat-auth
 
+[![npm version](https://badge.fury.io/js/wechat-auth.svg)](https://www.npmjs.com/package/wechat-auth)
 [![Build Status](https://travis-ci.org/markaii/wechat-auth.svg?branch=master)](https://travis-ci.org/markaii/wechat-auth)
 [![Dependencies Status](https://david-dm.org/markaii/wechat-auth.svg)](https://david-dm.org/markaii/wechat-auth)
 
