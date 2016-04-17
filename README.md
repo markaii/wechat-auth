@@ -152,7 +152,7 @@ wxauth.getAuthOption(authorizer_appid, option_name, function(err, reply) {
 
 ### 设置授权方的选项信息
 
-``js
+```js
 // authorizer_appid 授权公众号的appid
 // option_name 选项名
 // option_value选项值
