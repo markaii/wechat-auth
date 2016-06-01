@@ -142,7 +142,7 @@ wxauth.getAuthInfo(authorizer_appid, function(err, reply) {
 
 ### 获取授权方的选项设置信息
 
-``js
+```js
 // authorizer_appid 授权公众号的appid
 // option_name 选项名
 wxauth.getAuthOption(authorizer_appid, option_name, function(err, reply) {
@@ -189,7 +189,7 @@ wxauth.getOAuthAccessToken(appid, code, function(err, reply) {
 // appid 授权公众号的appid
 // refresh_token 授权刷新token
 // callback 回调函数
-wxauth.getOAuthAccessToken(appid, refresh_token, function(err, reply) {
+wxauth.refreshOAuthAccessToken(appid, refresh_token, function(err, reply) {
   // TODO
 });
 ```
