@@ -75,7 +75,7 @@ var getComponentToken = function(callback) {
     if (err) {
       return callback(err);
     } else {
-      return callback(null, token);
+      return callback(null, JSON.parse(token));
     }
   });
 };
@@ -84,7 +84,7 @@ var getComponentToken = function(callback) {
  * 保存component_access_token到redis中
  */
 var saveComponentToken = function(token, callback) {
-  return redisClient.set('component_access_token', token, function(err, reply) {
+  return redisClient.set('component_access_token', JSON.stringify(token), function(err, reply) {
     if (err) {
       callback(err);
     }
