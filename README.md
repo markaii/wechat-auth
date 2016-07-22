@@ -92,7 +92,36 @@ var saveComponentToken = function(token, callback) {
   });
 };
 
-var wxauth = new WXAuth(appid, appsecret, getVerifyTicket, getComponentToken, saveComponentToken);
+/*
+ * 获取全局authorizer_access_token的方法
+ * 从redis缓存中读取
+ */
+var getAuthorizerAccessToken = function(appid, callback) {
+  return redisClient.get(`authorizer_access_token:${appid}`, function(err, accessToken) {
+    if (err) {
+      return callback(err)
+    } else {
+      return callback(null, JSON.parse(accessToken));
+    }
+  });
+};
+
+/*
+ * 设置全局authorizer_access_token的方法
+ * 从redis缓存中读取
+ */
+var saveAuthorizerAccessToken = function(appid, accessToken, callback) {
+  let key = `authorizer_access_token:${appid}`
+  return redisClient.setex(key, 7000, JSON.stringify(accessToken), function(err, reply) {
+    if (err) {
+      return callback(err)
+    } else {
+      return callback(null, reply);
+    }
+  });
+};
+
+var wxauth = new WXAuth(appid, appsecret, getVerifyTicket, getComponentToken, saveComponentToken, getAuthorizerAccessToken, saveAuthorizerAccessToken);
 ```
 
 ### 获取第三方平台component_access_token
