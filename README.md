@@ -84,11 +84,10 @@ var getComponentToken = function(callback) {
  * 保存component_access_token到redis中
  */
 var saveComponentToken = function(token, callback) {
-  return redisClient.set('component_access_token', JSON.stringify(token), function(err, reply) {
+  return redisClient.setex('component_access_token', 7000, JSON.stringify(token), function(err, reply) {
     if (err) {
       callback(err);
     }
-    redisClient.expire('component_access_token', 7000);
     return callback(null);
   });
 };
