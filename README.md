@@ -5,7 +5,7 @@
 [![Dependencies Status](https://david-dm.org/markaii/wechat-auth.svg)](https://david-dm.org/markaii/wechat-auth)
 
 
-(nodejs)微信公众号第三方平台授权sdk
+(nodejs)微信公众号第三方平台授权sdk(注意：老版本里面component_access_token的处理不正确，请升级到最新版)
 
 针对微信公众号第三方开发者，封装了授权流程中的主要api,
 详情见微信开放平台文档[授权流程说明](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1453779503&token=e7e06f30f4625f3274a06dd29b07d76f8aa00da7&lang=zh_CN)。
